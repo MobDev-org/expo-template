@@ -1,17 +1,12 @@
 <br />
-<p align="center">
-  <h1 align="center">Expo template</h1>
-    <br />
 
-  <p align="center">
-    Our Recommended template for Expo projects.
-    <br />
-    <br />
-    
+<h1 align="center">Expo template</h1>
+
+<br />
+<p align="center">Our Recommended template for Expo projects.</p>
+<br />
+
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
-  </p>
-</p>
 
 <hr>
 
@@ -23,7 +18,7 @@ All of the changes by version can be found in [CHANGELOG](./CHANGELOG.md).
 <!-- ## Prerequisites -->
 
 - [Expo development environment on your machine](https://reactnative.dev/docs/environment-setup)
-<!-- - [environments](./.env.example) - get in contact with someone from team (Ivan, Mateo or Mahir) who has access to this [drive folder](https://drive.google.com/drive/folders/1RZOoRQi2zdLyTOe-Mapj1r-hHw2xWTsM?usp=sharing), there you will find urls for both env's in the sheet
+<!-- - [environments](./.env.example) - get in contact with someone from team who has access to this [drive folder](https://drive.google.com/drive/folders/1RZOoRQi2zdLyTOe-Mapj1r-hHw2xWTsM?usp=sharing), there you will find urls for both env's in the sheet
 ![Environment files](./__readme-images/environments.png 'Environment files') -->
 
 </details>
@@ -32,16 +27,14 @@ All of the changes by version can be found in [CHANGELOG](./CHANGELOG.md).
 <!-------------------------------------------------------------------->
 
 <details>
-<summary>Clone & Install packages</summary>
+<summary>Create new project</summary>
 
 ```shell
-git clone git@github.com:blazing-edge-labs/zgapp-app.git
+expo init --template @mob.dev/expo-template
 ```
 
-and
-
 ```shell
-yarn
+cd Your_Project_Name
 ```
 
 </details>
