@@ -237,6 +237,20 @@ This is so we can easily generate new changelog.
 <!-------------------------------------------------------------------->
 <!-------------------------------------------------------------------->
 
+<details>
+<summary>Making sure that the code is written by standards</summary>
+
+[`Check this blog`](https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/#eslint)
+
+- `ESlint`
+- `Prettier`
+- `Husky`
+
+</details>
+
+<!-------------------------------------------------------------------->
+<!-------------------------------------------------------------------->
+
 <!-- <details>
 <summary>Generate production version</summary>
 
