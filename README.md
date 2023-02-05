@@ -17,7 +17,7 @@ All of the changes by version can be found in [CHANGELOG](./CHANGELOG.md).
 
 <!-- ## Prerequisites -->
 
-- [Expo development environment on your machine](https://reactnative.dev/docs/environment-setup)
+-   [Expo development environment on your machine](https://reactnative.dev/docs/environment-setup)
 <!-- - [environments](./.env.example) - get in contact with someone from team who has access to this [drive folder](https://drive.google.com/drive/folders/1RZOoRQi2zdLyTOe-Mapj1r-hHw2xWTsM?usp=sharing), there you will find urls for both env's in the sheet
 ![Environment files](./__readme-images/environments.png 'Environment files') -->
 
@@ -208,15 +208,15 @@ In addition we will follow [semantic versioning](https://semver.org/).
 
 This is so we can easily generate new changelog.
 
-- `Commiting`:
-  - `git commit`: This will run CLI interface to easily create commit messages that follow conventional commits logic
-  - `commitizen`: It will guide you and prompt you options to choose from so you follow the standard. At the end it will open the editor in terminal with your commit message. All you have to do is type in `:q` to exit and save
-- `Generate CHANGELOG.md` from your commits that follow conventional standard:
-  - Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
-  - To bump up the version in package.json version of this repo and generate changelog:
-    - `yarn release:patch`: (0.0.X)
-    - `yarn release:minor`: (0.X.0)
-    - `yarn release:major`: (X.0.0)
+-   `Commiting`:
+    -   `git commit`: This will run CLI interface to easily create commit messages that follow conventional commits logic
+    -   `commitizen`: It will guide you and prompt you options to choose from so you follow the standard. At the end it will open the editor in terminal with your commit message. All you have to do is type in `:q` to exit and save
+-   `Generate CHANGELOG.md` from your commits that follow conventional standard:
+    -   Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
+    -   To bump up the version in package.json version of this repo and generate changelog:
+        -   `yarn release:patch`: (0.0.X)
+        -   `yarn release:minor`: (0.X.0)
+        -   `yarn release:major`: (X.0.0)
 
 </details>
 <!-------------------------------------------------------------------->
@@ -225,12 +225,12 @@ This is so we can easily generate new changelog.
 <details>
 <summary>Generate CHANGELOG.md</summary>
 
-- `Generate CHANGELOG.md` from your commits that follow conventional standard:
-  - Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
-  - To bump up the version in package.json version of this repo and generate changelog:
-    - `yarn release:patch`: (0.0.X)
-    - `yarn release:minor`: (0.X.0)
-    - `yarn release:major`: (X.0.0)
+-   `Generate CHANGELOG.md` from your commits that follow conventional standard:
+    -   Library used [commit-and-tag-version](https://www.npmjs.com/package/commit-and-tag-version) which is a fork of [standard-version](https://www.npmjs.com/package/standard-version):
+    -   To bump up the version in package.json version of this repo and generate changelog:
+        -   `yarn release:patch`: (0.0.X)
+        -   `yarn release:minor`: (0.X.0)
+        -   `yarn release:major`: (X.0.0)
 
 </details>
 
@@ -242,9 +242,9 @@ This is so we can easily generate new changelog.
 
 [`Check this blog`](https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/#eslint)
 
-- `ESlint`
-- `Prettier`
-- `Husky`
+-   `ESlint`
+-   `Prettier`
+-   `Husky`
 
 </details>
 
