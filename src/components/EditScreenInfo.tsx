@@ -41,7 +41,9 @@ function handleHelpPress() {
     try {
         WebBrowser.openBrowserAsync(
             'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet',
-        ).catch(() => {});
+        ).catch((error) => {
+            console.log('error', error);
+        });
     } catch (error) {
         console.log(error);
     }

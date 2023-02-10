@@ -25,18 +25,8 @@ module.exports = {
         quotes: ['error', 'single', { avoidEscape: true }],
         'linebreak-style': ['error', 'unix'],
         semi: ['error', 'always'],
-        'no-empty-function': 'off',
-        '@typescript-eslint/no-empty-function': 'off',
-        'react/display-name': 'off',
-        'react/prop-types': 'off',
-        'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
         'prettier/prettier': 'error',
-        '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-unsafe-call': 'off',
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-        '@typescript-eslint/no-unsafe-return': 'off',
         'import/order': [
             'error',
             {
