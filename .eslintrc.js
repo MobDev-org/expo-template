@@ -19,7 +19,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
+    plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'import'],
     rules: {
         indent: ['error', 4, { SwitchCase: 1 }],
         quotes: ['error', 'single', { avoidEscape: true }],
@@ -37,6 +37,13 @@ module.exports = {
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
+        'import/order': [
+            'error',
+            {
+                groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+                'newlines-between': 'always',
+            },
+        ],
     },
     settings: {
         react: {

@@ -5,4 +5,7 @@ module.exports = {
     trailingComma: 'all',
     tabWidth: 4,
     printWidth: 120,
+    importOrder: ['^[./]', '^@/(.*)$'],
+    importOrderSeparation: true,
+    importOrderSortSpecifiers: true,
 };

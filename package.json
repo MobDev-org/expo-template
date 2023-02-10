@@ -15,7 +15,7 @@
         "prepare": "husky install",
         "tscheck": "tsc -p . --noEmit",
         "lint": "eslint --ext .tsx --ext .ts src/",
-        "format": "prettier --check ./src"
+        "format": "prettier --write 'src/**/*.{js,jsx}'"
     },
     "dependencies": {
         "@expo/vector-icons": "^13.0.0",
@@ -26,6 +26,7 @@
         "@reduxjs/toolkit": "^1.9.2",
         "expo": "~47.0.13",
         "expo-asset": "~8.7.0",
+        "expo-community-flipper": "^47.0.2",
         "expo-constants": "~14.0.2",
         "expo-font": "~11.0.1",
         "expo-linking": "~3.3.0",
@@ -40,13 +41,13 @@
         "react-native-screens": "~3.18.0",
         "react-native-web": "~0.18.7",
         "react-redux": "^8.0.5",
-        "redux-persist": "^6.0.0",
-        "expo-community-flipper": "^47.0.2"
+        "redux-persist": "^6.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.19.3",
         "@commitlint/cli": "^17.4.2",
         "@commitlint/config-conventional": "^17.4.2",
+        "@trivago/prettier-plugin-sort-imports": "^4.0.0",
         "@types/react": "~18.0.24",
         "@types/react-native": "~0.70.6",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
@@ -55,6 +56,7 @@
         "commitizen": "^4.3.0",
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^8.33.0",
+        "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
