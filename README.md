@@ -17,7 +17,14 @@ All of the changes by version can be found in [CHANGELOG](./CHANGELOG.md).
 
 <!-- ## Prerequisites -->
 
--   [Expo development environment on your machine](https://reactnative.dev/docs/environment-setup)
+[Expo development environment on your machine](https://reactnative.dev/docs/environment-setup)
+
+Install globally on your device [expo cli](https://reactnative.dev/docs/environment-setup)
+
+```shell
+npm install -g expo-cli
+```
+
 <!-- - [environments](./.env.example) - get in contact with someone from team who has access to this [drive folder](https://drive.google.com/drive/folders/1RZOoRQi2zdLyTOe-Mapj1r-hHw2xWTsM?usp=sharing), there you will find urls for both env's in the sheet
 ![Environment files](./__readme-images/environments.png 'Environment files') -->
 
@@ -30,7 +37,7 @@ All of the changes by version can be found in [CHANGELOG](./CHANGELOG.md).
 <summary>Create new project</summary>
 
 ```shell
-expo init --template @mob.dev/expo-template
+expo init -t '@mob.dev/expo-template' --no-install
 ```
 
 ```shell
@@ -45,6 +52,12 @@ cd Your_Project_Name
 <details>
 <summary>Running the app</summary>
 
+Install packages
+
+```shell
+yarn
+```
+
 To start local metro server with JS code bundled
 
 ```shell
@@ -55,6 +68,12 @@ yarn start
 
 ```shell
 yarn android
+```
+
+Running it on your device, connect it with a cable, make sure you have ADB installed
+
+```shell
+android:installToDevice
 ```
 
 ```shell
@@ -251,14 +270,26 @@ This is so we can easily generate new changelog.
 <!-------------------------------------------------------------------->
 <!-------------------------------------------------------------------->
 
-<!-- <details>
+<details>
 <summary>Generate production version</summary>
 
-These are the steps to generate `.apk`, `.aab` and `.ipa` files
+<!-- These are the steps to generate `.apk`, `.aab` and `.ipa` files -->
 
 ### Android
 
-First you need to bump up the version of the app, so it does not have conflict with previous builds when uploading:
+Creates APK file in expo
+
+```shell
+yarn android:releaseToExpo
+```
+
+Creates AAB file
+
+```shell
+yarn android:prepareForGooglePlay
+```
+
+<!-- First you need to bump up the version of the app, so it does not have conflict with previous builds when uploading:
 
 Go to `android/app/build.gradle`
 
@@ -288,9 +319,9 @@ cd android && ENVFILE=../.env.production ./gradlew bundleRelease && cd ..
 
 For more info please go to https://reactnative.dev/docs/signed-apk-android
 
-![Environment files](./__readme-images/android-builds.png "Environment files")
+![Environment files](./__readme-images/android-builds.png "Environment files") -->
 
-### iOS
+<!-- ### iOS
 
 1. Go to the Xcode
 2. Select the schema and target, then bump up the build number, if you previously released some version to production, then update the version number as well
@@ -305,9 +336,9 @@ For more info please go to https://reactnative.dev/docs/signed-apk-android
 
 5. When archive is finished it will popup a window with that build, all you need to do is upload it, go next -> next until it is finished
 
-For more info please go to https://reactnative.dev/docs/publishing-to-app-store
+For more info please go to https://reactnative.dev/docs/publishing-to-app-store -->
 
-</details> -->
+</details>
 
 <!-------------------------------------------------------------------->
 <!-------------------------------------------------------------------->

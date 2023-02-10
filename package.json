@@ -4,7 +4,12 @@
     "main": "node_modules/expo/AppEntry.js",
     "scripts": {
         "start": "expo start --clear",
+        "reverse": "adb reverse tcp:9090 tcp:9090",
         "android": "expo start --android",
+        "android:installToDevice": "yarn reverse && npx expo run:android --device",
+        "android:releaseToExpo": "eas build -p android --profile preview",
+        "android:releaseForGooglePlay": "eas build -p android --profile release",
+        "android:update": "eas update",
         "ios": "expo start --ios",
         "web": "expo start --web",
         "test": "jest --watchAll",
@@ -12,7 +17,7 @@
         "release:minor": "commit-and-tag-version --release-as minor",
         "release:patch": "commit-and-tag-version --release-as patch",
         "release:major": "commit-and-tag-version --release-as major",
-        "prepare": "husky install",
+        "prepare": "husky install && chmod ug+x .husky/*",
         "tscheck": "tsc -p . --noEmit",
         "lint": "eslint --ext .tsx --ext .ts src/",
         "format": "prettier --write 'src/**/*.{js,jsx}'"
