@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675584364671" clover="3.2.0">
-  <project timestamp="1675584364671" name="All files">
-    <metrics statements="57" coveredstatements="11" conditionals="8" coveredconditionals="1" methods="27" coveredmethods="4" elements="92" coveredelements="16" complexity="0" loc="57" ncloc="57" packages="5" files="14" classes="14"/>
+<coverage generated="1675667540762" clover="3.2.0">
+  <project timestamp="1675667540762" name="All files">
+    <metrics statements="73" coveredstatements="11" conditionals="10" coveredconditionals="1" methods="31" coveredmethods="4" elements="114" coveredelements="16" complexity="0" loc="73" ncloc="73" packages="8" files="19" classes="19"/>
     <package name="components">
       <metrics statements="18" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="3"/>
       <file name="EditScreenInfo.tsx" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/components/EditScreenInfo.tsx">
@@ -43,6 +43,12 @@
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="helpers">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="axiosService.ts" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/helpers/axiosService.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="hooks">
@@ -113,6 +119,40 @@
       <file name="TabTwoScreen.tsx" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/screens/TabTwoScreen.tsx">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="hooks.ts" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/store/hooks.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/store/index.ts">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+      </file>
+      <file name="reducers.ts" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/store/reducers.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.theme">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="slice.ts" path="/Users/mahirkadic/Documents/git/mobDev/expo-template/src/store/theme/slice.ts">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
       </file>
     </package>
