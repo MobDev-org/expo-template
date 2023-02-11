@@ -1,12 +1,12 @@
 import { Button, StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-import { RootTabScreenProps } from '@/navigation/types';
+import { Text, View } from '@/components/atoms/Themed';
+import { BottomTabsScreenProps } from '@/navigation/types';
+import EditScreenInfo from '@/screens/EditScreenInfo';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { Theme, setTheme } from '@/store/theme/slice';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function TabOneScreen({ navigation }: BottomTabsScreenProps<'TabOne'>) {
     navigation;
     const theme = useAppSelector((state) => state.theme);
     const dispatch = useAppDispatch();

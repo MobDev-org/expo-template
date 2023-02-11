@@ -58,6 +58,12 @@ Install packages
 yarn
 ```
 
+Find files that start with this word and replace it with . (dot)
+
+```shell
+replaceThisWordWithDot-
+```
+
 To start local metro server with JS code bundled
 
 ```shell

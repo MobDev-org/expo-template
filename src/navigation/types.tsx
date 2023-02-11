@@ -6,31 +6,23 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-// declare global {
-//   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//   // @ts-ignore
-//   namespace ReactNavigation {
-//     type RootParamList = RootStackParamList;
-//   }
-// }
-
-export type RootStackParamList = {
-    Root: NavigatorScreenParams<RootTabParamList> | undefined;
+export type StackNavParamList = {
+    Root: NavigatorScreenParams<BottomTabsParamList> | undefined;
     Modal: undefined;
     NotFound: undefined;
 };
 
-export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
-    RootStackParamList,
+export type StackNavScreenProps<Screen extends keyof StackNavParamList> = NativeStackScreenProps<
+    StackNavParamList,
     Screen
 >;
 
-export type RootTabParamList = {
+export type BottomTabsParamList = {
     TabOne: undefined;
     TabTwo: undefined;
 };
 
-export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
-    BottomTabScreenProps<RootTabParamList, Screen>,
-    NativeStackScreenProps<RootStackParamList>
+export type BottomTabsScreenProps<Screen extends keyof BottomTabsParamList> = CompositeScreenProps<
+    BottomTabScreenProps<BottomTabsParamList, Screen>,
+    NativeStackScreenProps<StackNavParamList>
 >;
