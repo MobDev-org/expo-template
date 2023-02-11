@@ -1,142 +1,142 @@
 {
-  "name": "templateapp",
-  "version": "1.0.2",
-  "scripts": {
-    "start": "expo start --dev-client",
-    "reverse": "adb reverse tcp:9090 tcp:9090",
-    "android": "expo run:android",
-    "android:installToDevice": "yarn reverse && npx expo run:android --device",
-    "android:releaseToExpo": "eas build -p android --profile preview",
-    "android:releaseForGooglePlay": "eas build -p android --profile release",
-    "android:update": "eas update",
-    "ios": "expo run:ios",
-    "ios:installToDevice": "npx expo run:ios --device",
-    "ios:createDevelopmentBuildForSimulator": "eas build --profile development-simulator --platform ios",
-    "web": "expo start --web",
-    "test": "jest --watchAll",
-    "testFinal": "jest",
-    "release:minor": "commit-and-tag-version --release-as minor",
-    "release:patch": "commit-and-tag-version --release-as patch",
-    "release:major": "commit-and-tag-version --release-as major",
-    "prepare": "husky install && chmod ug+x .husky/*",
-    "tscheck": "tsc -p . --noEmit",
-    "lint": "eslint --ext .tsx --ext .ts src/",
-    "format": "prettier --write 'src/**/*.{js,jsx}'"
-  },
-  "dependencies": {
-    "@expo/vector-icons": "^13.0.0",
-    "@react-navigation/bottom-tabs": "^6.5.4",
-    "@react-navigation/native": "^6.1.3",
-    "@react-navigation/native-stack": "^6.9.9",
-    "@reduxjs/toolkit": "^1.9.2",
-    "expo": "~47.0.12",
-    "expo-asset": "~8.7.0",
-    "expo-community-flipper": "^47.0.2",
-    "expo-constants": "~14.0.2",
-    "expo-dev-client": "~2.0.1",
-    "expo-font": "~11.0.1",
-    "expo-linking": "~3.3.0",
-    "expo-secure-store": "~12.0.0",
-    "expo-splash-screen": "~0.17.5",
-    "expo-status-bar": "~1.4.2",
-    "expo-system-ui": "~2.0.1",
-    "expo-web-browser": "~12.0.0",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-native": "0.70.5",
-    "react-native-flipper": "^0.180.0",
-    "react-native-safe-area-context": "4.4.1",
-    "react-native-screens": "~3.18.0",
-    "react-native-web": "~0.18.7",
-    "react-redux": "^8.0.5",
-    "redux-persist": "^6.0.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.19.3",
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-    "@types/react": "~18.0.24",
-    "@types/react-native": "~0.70.6",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "babel-plugin-module-resolver": "^5.0.0",
-    "commit-and-tag-version": "^11.0.0",
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.33.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
-    "jest": "^26.6.3",
-    "jest-expo": "^47.0.1",
-    "prettier": "^2.8.3",
-    "react-test-renderer": "18.1.0",
-    "redux-flipper": "^2.0.2",
-    "typescript": "^4.9.5"
-  },
-  "private": false,
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
-    ],
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "**/*.{js,jsx,ts,tsx}",
-      "!**/coverage/**",
-      "!**/node_modules/**",
-      "!**/babel.config.js",
-      "!**/jest.setup.js",
-      "!*.{js,jsx,ts,tsx}"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "commit-and-tag-version": {
-    "skip": {
-      "commit": true
+    "name": "templateapp",
+    "version": "1.0.2",
+    "scripts": {
+        "start": "expo start --dev-client",
+        "reverse": "adb reverse tcp:9090 tcp:9090",
+        "android": "expo run:android",
+        "android:installToDevice": "yarn reverse && npx expo run:android --device",
+        "android:releaseToExpo": "eas build -p android --profile preview",
+        "android:releaseForGooglePlay": "eas build -p android --profile release",
+        "android:update": "eas update",
+        "ios": "expo run:ios --device",
+        "ios:installReleaseToDevice": "npx expo run:ios --device --configuration Release",
+        "ios:createDevelopmentBuildForSimulator": "eas build --profile development-simulator --platform ios",
+        "web": "expo start --web",
+        "test": "jest --watchAll",
+        "testFinal": "jest",
+        "release:minor": "commit-and-tag-version --release-as minor",
+        "release:patch": "commit-and-tag-version --release-as patch",
+        "release:major": "commit-and-tag-version --release-as major",
+        "prepare": "husky install && chmod ug+x .husky/*",
+        "tscheck": "tsc -p . --noEmit",
+        "lint": "eslint --ext .tsx --ext .ts src/",
+        "format": "prettier --write 'src/**/*.{js,jsx}'"
     },
-    "types": [
-      {
-        "type": "feat",
-        "section": "Features:"
-      },
-      {
-        "type": "fix",
-        "section": "Bug Fixes"
-      },
-      {
-        "type": "chore",
-        "section": "Chore: Maintenance",
-        "hidden": false
-      },
-      {
-        "type": "docs",
-        "section": "Documentation:",
-        "hidden": false
-      },
-      {
-        "type": "style",
-        "hidden": false
-      },
-      {
-        "type": "refactor",
-        "hidden": false
-      },
-      {
-        "type": "perf",
-        "hidden": false
-      },
-      {
-        "type": "test",
-        "hidden": false
-      }
-    ]
-  }
+    "dependencies": {
+        "@expo/vector-icons": "^13.0.0",
+        "@react-navigation/bottom-tabs": "^6.5.4",
+        "@react-navigation/native": "^6.1.3",
+        "@react-navigation/native-stack": "^6.9.9",
+        "@reduxjs/toolkit": "^1.9.2",
+        "expo": "~47.0.12",
+        "expo-asset": "~8.7.0",
+        "expo-community-flipper": "^47.0.2",
+        "expo-constants": "~14.0.2",
+        "expo-dev-client": "~2.0.1",
+        "expo-font": "~11.0.1",
+        "expo-linking": "~3.3.0",
+        "expo-secure-store": "~12.0.0",
+        "expo-splash-screen": "~0.17.5",
+        "expo-status-bar": "~1.4.2",
+        "expo-system-ui": "~2.0.1",
+        "expo-web-browser": "~12.0.0",
+        "react": "18.1.0",
+        "react-dom": "18.1.0",
+        "react-native": "0.70.5",
+        "react-native-flipper": "^0.180.0",
+        "react-native-safe-area-context": "4.4.1",
+        "react-native-screens": "~3.18.0",
+        "react-native-web": "~0.18.7",
+        "react-redux": "^8.0.5",
+        "redux-persist": "^6.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.19.3",
+        "@commitlint/cli": "^17.4.2",
+        "@commitlint/config-conventional": "^17.4.2",
+        "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+        "@types/react": "~18.0.24",
+        "@types/react-native": "~0.70.6",
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "babel-plugin-module-resolver": "^5.0.0",
+        "commit-and-tag-version": "^11.0.0",
+        "commitizen": "^4.3.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.33.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "husky": "^8.0.3",
+        "jest": "^26.6.3",
+        "jest-expo": "^47.0.1",
+        "prettier": "^2.8.3",
+        "react-test-renderer": "18.1.0",
+        "redux-flipper": "^2.0.2",
+        "typescript": "^4.9.5"
+    },
+    "private": false,
+    "jest": {
+        "preset": "jest-expo",
+        "transformIgnorePatterns": [
+            "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+        ],
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "**/*.{js,jsx,ts,tsx}",
+            "!**/coverage/**",
+            "!**/node_modules/**",
+            "!**/babel.config.js",
+            "!**/jest.setup.js",
+            "!*.{js,jsx,ts,tsx}"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "commit-and-tag-version": {
+        "skip": {
+            "commit": true
+        },
+        "types": [
+            {
+                "type": "feat",
+                "section": "Features:"
+            },
+            {
+                "type": "fix",
+                "section": "Bug Fixes"
+            },
+            {
+                "type": "chore",
+                "section": "Chore: Maintenance",
+                "hidden": false
+            },
+            {
+                "type": "docs",
+                "section": "Documentation:",
+                "hidden": false
+            },
+            {
+                "type": "style",
+                "hidden": false
+            },
+            {
+                "type": "refactor",
+                "hidden": false
+            },
+            {
+                "type": "perf",
+                "hidden": false
+            },
+            {
+                "type": "test",
+                "hidden": false
+            }
+        ]
+    }
 }

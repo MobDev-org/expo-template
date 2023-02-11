@@ -70,14 +70,30 @@ yarn start
 yarn android
 ```
 
-Running it on your device, connect it with a cable, make sure you have ADB installed
+Running it on your device as a standalone app, connect it with a cable, make sure you have ADB installed
 
 ```shell
-android:installToDevice
+yarn android:installToDevice
+```
+
+```shell
+
 ```
 
 ```shell
 yarn ios
+```
+
+Running the app on device
+
+```shell
+yarn ios:installReleaseToDevice
+```
+
+Triggering command to create development build in Expo EAS services that can be installed on simulator
+
+```shell
+yarn ios:createDevelopmentBuildForSimulator
 ```
 
 <!-------------------------------------------------------------------->
