@@ -19,10 +19,13 @@ import ModalScreen from '@/screens/ModalScreen';
 import NotFoundScreen from '@/screens/NotFoundScreen';
 import TabOneScreen from '@/screens/TabOneScreen';
 import TabTwoScreen from '@/screens/TabTwoScreen';
+import { useAppSelector } from '@/store/hooks';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+    const theme = useAppSelector((state) => state.theme);
+
     return (
-        <NavigationContainer linking={LinkingConfiguration} theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <NavigationContainer linking={LinkingConfiguration} theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
             <RootNavigator />
         </NavigationContainer>
     );
@@ -54,12 +57,13 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
     const colorScheme = useColorScheme();
+    const theme = useAppSelector((state) => state.theme);
 
     return (
         <BottomTab.Navigator
             initialRouteName="TabOne"
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme].tint,
+                tabBarActiveTintColor: Colors[theme].tint,
             }}>
             <BottomTab.Screen
                 name="TabOne"
@@ -76,7 +80,7 @@ function BottomTabNavigator() {
                             <FontAwesome
                                 name="info-circle"
                                 size={25}
-                                color={Colors[colorScheme].text}
+                                color={Colors[theme].text}
                                 style={{ marginRight: 15 }}
                             />
                         </Pressable>

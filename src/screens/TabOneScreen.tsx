@@ -1,15 +1,22 @@
-import { StyleSheet } from 'react-native';
+import { Button, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import { RootTabScreenProps } from '@/navigation/types';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { Theme, setTheme } from '@/store/theme/slice';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+    navigation;
+    const theme = useAppSelector((state) => state.theme);
+    const dispatch = useAppDispatch();
+    const changeTheme = (theme: Theme) => dispatch(setTheme(theme));
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tab One</Text>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-            <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+            <Button title="Change theme" onPress={() => changeTheme(theme === 'dark' ? 'light' : 'dark')} />
+            {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
         </View>
     );
 }
