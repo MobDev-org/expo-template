@@ -1,4 +1,3 @@
-// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { configureStore } from '@reduxjs/toolkit';
 import createDebugger from 'redux-flipper';
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from 'redux-persist';
@@ -12,7 +11,6 @@ const storage = createSecureStorage();
 
 const persistConfig = {
     key: 'root',
-    // storage: AsyncStorage,
     storage,
     stateReconciler: autoMergeLevel2,
 };
@@ -37,5 +35,6 @@ const store = configureStore({
 
 export default store;
 export const persistor = persistStore(store);
+
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
