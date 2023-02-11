@@ -50,6 +50,34 @@ cd Your_Project_Name
 <!-------------------------------------------------------------------->
 
 <details>
+<summary>Folder structure</summary>
+
+### Folder: root
+
+-   `api`: Generated files from backend. Typescript types and hooks to call api
+-   `src`: Source folder that contains whole app logic and UI
+
+    -   `assets`:
+
+        -   `icons`: svg files that are transformed into React Native components
+        -   `images`: png files
+
+    -   `components` - done by standard of [atomic design](https://blog.logrocket.com/atomic-design-react-native/):
+        -   `atoms`: smaller UI components that do one thing
+        -   `molecules`: UI components that consist of multiple atoms
+    -   `constants`: some constants used throughout the app
+    -   `helpers`: some files that help in the app
+    -   `hooks`: custom hooks that can be used throughout the app
+    -   `navigation`: configuration for navigation
+    -   `screens`: screens, used in navigation, and they contain logic and layout
+    -   `store`: redux store for global storage, also is persisted for offline storage. For persisting data it uses secure storage
+
+</details>
+
+<!-------------------------------------------------------------------->
+<!-------------------------------------------------------------------->
+
+<details>
 <summary>Running the app</summary>
 
 Install packages
@@ -361,54 +389,6 @@ For more info please go to https://reactnative.dev/docs/signed-apk-android
 For more info please go to https://reactnative.dev/docs/publishing-to-app-store -->
 
 </details>
-
-<!-------------------------------------------------------------------->
-<!-------------------------------------------------------------------->
-
-<!-- <details>
-<summary>Folder structure</summary>
-
-# v1 - Old app
-
-- `assets`:
-
-  - `fonts`: This folder contains all the fonts used in the app.
-
-- `src`: This folder is the main container of all the code inside our application.
-
-  - `api`: This folder contains some of the data fetching files prepared for usage in components.
-  - `assets`: Asset folder to store all images, vectors, etc.
-  - `components`: Folder to store any common component that you use through your app (such as a generic button)
-  - `const`: Folder to store any kind of constant that you have.
-  - `context`: Contains one file that has logic for storing data in global context which every component can access directly. Also saves data in storage when app can access it when it is opened again.
-
-  Folder to store all your network logic (you should have one controller per resource).
-
-  - `interfaces`: Folder to store the interfaces used throughout the application.
-  - `index.ts`: Folder to store the navigators.
-  - `utils`: This folder has utilities that are used througout the app, contains functions/classes for example -> notifications, api
-  - `screens`: Folder that contains all your application screens/features.
-    - `Screen`: Each screen should be stored inside its folder and inside it a file for its code
-  - `router`: Folder that contains all your application navigation.
-
-# v2 - New app
-
-### Folder: new_src
-
-- `api`: Generated files from backend. Typescript types and hooks to call api
-- `assets`:
-  - `icons`: svg files that are transformed into React Native components
-  - `images`: png files
-- `const`: some constants used throughout the app
-- `designSystem`:
-  - `atoms`: smaller UI components that do one thing
-  - `molecules`: UI components that consist of multiple atoms
-- `helpers`: some files that help in the app
-- `router`: configuration for navigation
-- `screens`: screens, used in navigation, and they contain logic and layout
-- `store`: redux store for global storage, also is persisted for offline storage
-
-</details> -->
 
 <!-------------------------------------------------------------------->
 <!-------------------------------------------------------------------->
