@@ -1,4 +1,4 @@
-import SecureStore, { SecureStoreOptions } from 'expo-secure-store';
+import * as SecureStore from 'expo-secure-store';
 
 export type Options = {
     replaceCharacter?: string;
@@ -10,12 +10,12 @@ const defaultReplacer = (key: string, replaceCharacter: string) => {
 };
 
 const createSecureStorage = (
-    options: SecureStoreOptions & Options = {
+    options: SecureStore.SecureStoreOptions & Options = {
         replacer: defaultReplacer,
     },
 ) => {
-    const replaceCharacter = options.replaceCharacter || '_';
-    const replacer = options.replacer || defaultReplacer;
+    const replaceCharacter = options?.replaceCharacter || '_';
+    const replacer = options?.replacer || defaultReplacer;
 
     return {
         getItem: (key: string) => SecureStore.getItemAsync(replacer(key, replaceCharacter), options),
