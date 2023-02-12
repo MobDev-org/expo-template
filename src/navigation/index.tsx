@@ -4,10 +4,14 @@
  *
  */
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { getLocales } from 'expo-localization';
+import i18next from 'i18next';
+import { useEffect } from 'react';
 
 import LinkingConfiguration from './LinkingConfiguration';
 import StackNavigator from './StackNav';
 
+import { initLanguageDetector } from '@/languages';
 import {
     // useAppDispatch,
     useAppSelector,
@@ -16,9 +20,17 @@ import {
 // import { setTheme } from '@/store/theme/slice';
 
 export default function Navigation() {
-    const theme = useAppSelector((state) => state.theme);
-    // const colorScheme = useColorScheme();
+    const { theme, language } = useAppSelector((state) => state.appSettings);
 
+    useEffect(() => {
+        i18next.changeLanguage(language).finally(() => {
+            console.log('Language changed');
+        });
+    }, [language]);
+
+    initLanguageDetector(getLocales()[0].languageTag).finally(() => {
+        console.log('Language detector initialized');
+    });
     // const dispatch = useAppDispatch();
 
     // React.useEffect(() => {

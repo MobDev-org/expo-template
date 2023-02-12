@@ -6,6 +6,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Colors from '@/constants/Colors';
 import { BottomTabsParamList } from '@/navigation/types';
@@ -20,7 +21,9 @@ import { useAppSelector } from '@/store/hooks';
 const BottomTab = createBottomTabNavigator<BottomTabsParamList>();
 
 function BottomTabNavigator() {
-    const theme = useAppSelector((state) => state.theme);
+    const { t } = useTranslation();
+
+    const theme = useAppSelector((state) => state.appSettings.theme);
 
     return (
         <BottomTab.Navigator
@@ -30,7 +33,7 @@ function BottomTabNavigator() {
                 headerShown: false,
             }}>
             <BottomTab.Screen
-                name="TabOne"
+                name={'TabOne'}
                 component={TabOneScreen}
                 // options={({ navigation }: BottomTabsScreenProps<'TabOne'>) => ({
                 //     title: 'Tab One',
@@ -50,12 +53,15 @@ function BottomTabNavigator() {
                 //         </Pressable>
                 //     ),
                 // })}
+                options={{
+                    title: t('navigation:tabOne') ?? 'Tab One',
+                }}
             />
             <BottomTab.Screen
                 name="TabTwo"
                 component={TabTwoScreen}
                 options={{
-                    title: 'Tab Two',
+                    title: t('navigation:tabTwo') ?? 'Tab Two',
                     tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
                 }}
             />

@@ -1,9 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import theme from './theme/slice';
+import appSettings from './appSettings/slice';
 
 const rootReducer = combineReducers({
-    theme,
+    appSettings,
 });
 
 export default rootReducer;

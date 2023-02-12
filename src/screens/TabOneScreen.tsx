@@ -1,22 +1,37 @@
+import { useTranslation } from 'react-i18next';
 import { Button, StyleSheet } from 'react-native';
 
 import { Text, View } from '@/components/atoms/Themed';
 import { BottomTabsScreenProps } from '@/navigation/types';
 import EditScreenInfo from '@/screens/EditScreenInfo';
+import { Theme, setLanguage, setTheme } from '@/store/appSettings/slice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { Theme, setTheme } from '@/store/theme/slice';
 
 export default function TabOneScreen({ navigation }: BottomTabsScreenProps<'TabOne'>) {
     navigation;
-    const theme = useAppSelector((state) => state.theme);
+    const { theme, language } = useAppSelector((state) => state.appSettings);
     const dispatch = useAppDispatch();
     const changeTheme = (theme: Theme) => dispatch(setTheme(theme));
+    const changeLanguage = () => {
+        console.log('Changing language', language);
+        dispatch(setLanguage(language === 'en-US' ? 'bs-BA' : 'en-US'));
+    };
+    const { t, i18n } = useTranslation();
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tab One</Text>
             <Button title="Change theme" onPress={() => changeTheme(theme === 'dark' ? 'light' : 'dark')} />
-            {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
+            <Button title="Toggle language" onPress={changeLanguage} />
+
+            <Text>{i18n.language}</Text>
+            <Text>{i18n.languages}</Text>
+            <Text>{t('common:languageName')}</Text>
+            <Text>{t('common:hello')}</Text>
+            <Text>{t('hello')}</Text>
+            <Text>{t('languageName')}</Text>
+            <Text>{t('navigation:tabOne')}</Text>
+            <Text>{t('tabOne')}</Text>
         </View>
     );
 }
