@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { StackNavScreenProps } from '../navigation/types';
+import { StackNavScreenProps } from '../../navigation/types';
 
 import { Text, View } from '@/components/atoms/Themed';
 

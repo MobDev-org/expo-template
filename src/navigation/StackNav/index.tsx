@@ -8,8 +8,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StackNavParamList } from '../types';
 
 import BottomTabNavigator from '@/navigation/BottomTabsNav';
-import ModalScreen from '@/screens/ModalScreen';
-import NotFoundScreen from '@/screens/NotFoundScreen';
+import ModalScreen from '@/screens/Modal';
+import NotFoundScreen from '@/screens/NotFound';
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.

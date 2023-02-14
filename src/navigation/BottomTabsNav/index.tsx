@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 
 import Colors from '@/constants/Colors';
 import { BottomTabsParamList } from '@/navigation/types';
-import TabOneScreen from '@/screens/TabOneScreen';
-import TabTwoScreen from '@/screens/TabTwoScreen';
+import TabOneScreen from '@/screens/TabOne';
+import TabTwoScreen from '@/screens/TabTwo';
 import { useAppSelector } from '@/store/hooks';
 
 /**
