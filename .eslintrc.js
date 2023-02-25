@@ -25,7 +25,6 @@ module.exports = {
         quotes: ['error', 'single', { avoidEscape: true }],
         'linebreak-style': ['error', 'unix'],
         semi: ['error', 'always'],
-        'react/react-in-jsx-scope': 'off',
         'prettier/prettier': 'error',
         'import/order': [
             'error',
@@ -34,6 +33,10 @@ module.exports = {
                 'newlines-between': 'always',
             },
         ],
+
+        // React
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-key': 'error', // Validate JSX has key prop when in array or iterator
     },
     settings: {
         react: {
