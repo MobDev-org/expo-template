@@ -14,6 +14,7 @@ export const namespaces = ['common', 'navigation'];
 
 export const initLanguageDetector = async (lng: string) => {
     await i18n.use(initReactI18next).init({
+        compatibilityJSON: 'v3',
         resources,
         lng,
         //language to use if translations in user language are not available
