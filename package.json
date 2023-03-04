@@ -67,6 +67,7 @@
         "@typescript-eslint/eslint-plugin": "^5.53.0",
         "@typescript-eslint/parser": "^5.53.0",
         "babel-plugin-module-resolver": "^5.0.0",
+        "babel-plugin-transform-remove-console": "^6.9.4",
         "commit-and-tag-version": "^11.1.0",
         "commitizen": "^4.3.0",
         "cz-conventional-changelog": "^3.3.0",
