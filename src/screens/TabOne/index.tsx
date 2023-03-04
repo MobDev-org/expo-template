@@ -21,6 +21,7 @@ export default function TabOneScreen({ navigation }: BottomTabsScreenProps<'TabO
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tab One</Text>
+
             <Button title="Change theme" onPress={() => changeTheme(theme === 'dark' ? 'light' : 'dark')} />
             <Button title="Toggle language" onPress={changeLanguage} />
             <AppIcon name="account" />

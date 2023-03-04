@@ -19,7 +19,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'import'],
+    plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'import', 'react-native'],
     rules: {
         indent: ['error', 4, { SwitchCase: 1 }],
         quotes: ['error', 'single', { avoidEscape: true }],
@@ -37,6 +37,7 @@ module.exports = {
         // React
         'react/react-in-jsx-scope': 'off',
         'react/jsx-key': 'error', // Validate JSX has key prop when in array or iterator
+        'react-native/no-inline-styles': 2,
     },
     settings: {
         react: {
