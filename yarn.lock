@@ -5091,13 +5091,13 @@ expo-asset@~8.9.0:
     path-browserify "^1.0.0"
     url-parse "^1.5.9"
 
-expo-community-flipper@^47.0.2:
-  version "47.0.2"
-  resolved "https://registry.yarnpkg.com/expo-community-flipper/-/expo-community-flipper-47.0.2.tgz#7713576f12c2b7460c313c8c9dc3a426100c8570"
-  integrity sha512-ZfqjVGiDM29D3ZdlDxTPfBrP7+dcPBsrY2Tl+KcWI1XHBY3Ka7VR41wSiseFLeqeNWlPjiOqDtLIEYqfBuV/Rg==
+expo-build-properties@~0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/expo-build-properties/-/expo-build-properties-0.5.1.tgz#6221f6b93f4d21c16c94cb781da1ec5ba21d00ea"
+  integrity sha512-wa02F4dmQTCxZ7rEBtaZCU0rCzpoUYSKF51cKCRT8ECEEkHe/k78VN8wI9fj03L7cIqJA5CJb2ZYydxKTbRHxA==
   dependencies:
-    semver "^7.3.8"
-    ts-dedent "^2.2.0"
+    ajv "^8.11.0"
+    semver "^7.3.5"
 
 expo-constants@~14.2.0, expo-constants@~14.2.1:
   version "14.2.1"
@@ -5107,21 +5107,21 @@ expo-constants@~14.2.0, expo-constants@~14.2.1:
     "@expo/config" "~8.0.0"
     uuid "^3.3.2"
 
-expo-dev-client@~2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/expo-dev-client/-/expo-dev-client-2.1.3.tgz#4f8f69fdb65124c6a1d4629a092d8127f5cb5c05"
-  integrity sha512-hKfnSkHV5zdzzI26jHBcmRpkd4Olu3T7t3E1zGQicEPNCoX7wMxIQWqUpYwHhvIMZXdJ8dsTG3pMeqUMQdV+Jw==
+expo-dev-client@~2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/expo-dev-client/-/expo-dev-client-2.1.5.tgz#a0f0a7e319c09813a001c9df1935adef4eb378d5"
+  integrity sha512-Xcz+4cQhuUgbQ3krEGqjeC6rwVIZsCnOWLHQyuHuiKGtJLJ6CfKHyuCPY53b7c0DI7ThWafKMD3vc78E7ux3TQ==
   dependencies:
-    expo-dev-launcher "2.1.3"
+    expo-dev-launcher "2.1.5"
     expo-dev-menu "2.1.3"
     expo-dev-menu-interface "1.1.1"
     expo-manifests "~0.5.0"
     expo-updates-interface "~0.9.0"
 
-expo-dev-launcher@2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/expo-dev-launcher/-/expo-dev-launcher-2.1.3.tgz#3db73fca0084e6bc7b6d37b71ab5310e2f7b4d5e"
-  integrity sha512-Wssr3ArC34pKNJQNQtZ7PQUmKz8PnBGrJTUTUfkiPGPPB1yP+oiDas7DftOMOzkLvw61UoB6aXc8rdxcC8+6NA==
+expo-dev-launcher@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/expo-dev-launcher/-/expo-dev-launcher-2.1.5.tgz#1ed3a407ac8a8f83cd92b0c06e7dcfdfc2dcaf1f"
+  integrity sha512-zwQ21JBEpL1FCTlJrPv3cOaDH9UN7MDPPx8k1j9i4ZxRMdLLYIDmgGiP/oz5dcLf4Z1yi3Ofur42eDYDkKgRlQ==
   dependencies:
     expo-dev-menu "2.1.3"
     resolve-from "^5.0.0"
@@ -5200,10 +5200,10 @@ expo-modules-autolinking@1.1.2:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.2.3.tgz#03943710f09120d9b60200fac377bfabcc010890"
-  integrity sha512-bYWxL60NPzDTuvlBrNLlwu7K6H7GqlRKJJpF1c3lqHsMw9vusu3StHZhAXB2noMPD+Ww/pGa/A9tfTtieqvbcg==
+expo-modules-core@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.2.4.tgz#06c0e92b952ae2d3b3329dbeadb6da4f01965d63"
+  integrity sha512-AV0NCTy9O8xQqpKgX6gvsDzV1ogpCzYpGxqM85Vw1xHsOF51s7Avu7NdNjBPUZOVuDderUXAvd97dWrtefSKcA==
   dependencies:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
@@ -5247,10 +5247,10 @@ expo-web-browser@~12.1.1:
     compare-urls "^2.0.0"
     url "^0.11.0"
 
-expo@^48.0.4:
-  version "48.0.4"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-48.0.4.tgz#de3be9695edb422a49c7734b2bde82f2caad668d"
-  integrity sha512-FGxaxqI8u0r3CvFQAEx/kpqZP4cA7q9ymMoIrrjtOsWvKsuk5Dt3gLEJpymGp6aicPuDXn3xBxo2dsRZF5NkUw==
+expo@~48.0.5:
+  version "48.0.5"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-48.0.5.tgz#350a12458cc38b9a37d24940f0b1833c12cb35e7"
+  integrity sha512-4sd0y8DX2GXbVWBS+UTKqcm60KeZxh7+EvGUi9jbJJAJkbCyt3smu4L0WGCaq/8+ki44H9G/pjM0B7VcZZjAiQ==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.6.2"
@@ -5266,7 +5266,7 @@ expo@^48.0.4:
     expo-font "~11.1.1"
     expo-keep-awake "~12.0.1"
     expo-modules-autolinking "1.1.2"
-    expo-modules-core "1.2.3"
+    expo-modules-core "1.2.4"
     fbemitter "^3.0.0"
     getenv "^1.0.0"
     invariant "^2.2.4"
@@ -9247,10 +9247,10 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-flipper@^0.182.0:
-  version "0.182.0"
-  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.182.0.tgz#7a2a5569715a9e571019e84ee2de4f72f4c5a4db"
-  integrity sha512-AoLVduVWluY99XDPznn05sXRyrE1OeEkc4aQCxDKgQYfCdf82aNOH+hwGO/CKcGEiC3T9oBzeOofqwo+Og4eWA==
+react-native-flipper@^0.183.0:
+  version "0.183.0"
+  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.183.0.tgz#5cbb2752b4a3b3af35d3fbc81ef1965ab18c5978"
+  integrity sha512-FuWPWf9ZFm1eiP4uydzuiD/Gr8McQPMWKyCUQieFg+LUmQDZstdtakiPYGMVezgpy+JgBCEmvIDR4uURcupyEg==
 
 react-native-gradle-plugin@^0.71.15:
   version "0.71.15"
@@ -9837,7 +9837,7 @@ semver@7.3.2:
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.2.tgz#604962b052b81ed0786aae84389ffba70ffd3938"
   integrity sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==
 
-semver@7.3.8, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8:
+semver@7.3.8, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7:
   version "7.3.8"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.8.tgz#07a78feafb3f7b32347d725e33de7e2a2df67798"
   integrity sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==
@@ -10666,11 +10666,6 @@ trim-newlines@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
   integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
-
-ts-dedent@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-2.2.0.tgz#39e4bd297cd036292ae2394eb3412be63f563bb5"
-  integrity sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==
 
 ts-interface-checker@^0.1.9:
   version "0.1.13"
