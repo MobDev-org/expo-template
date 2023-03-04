@@ -14,7 +14,6 @@ export default function TabOneScreen({ navigation }: BottomTabsScreenProps<'TabO
     const dispatch = useAppDispatch();
     const changeTheme = (theme: Theme) => dispatch(setTheme(theme));
     const changeLanguage = () => {
-        console.log('Changing language', language);
         dispatch(setLanguage(language === 'en-US' ? 'bs-BA' : 'en-US'));
     };
     const { t, i18n } = useTranslation();

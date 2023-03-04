@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider as StoreProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -18,7 +17,6 @@ export default function App() {
                 <PersistGate persistor={persistor}>
                     <SafeAreaProvider>
                         <Navigation />
-                        <StatusBar />
                     </SafeAreaProvider>
                 </PersistGate>
             </StoreProvider>

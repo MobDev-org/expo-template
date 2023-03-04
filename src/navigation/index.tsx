@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import LinkingConfiguration from './LinkingConfiguration';
 import StackNavigator from './StackNav';
 
+import FocusAwareStatusBar from '@/components/atoms/FocusAwareStatusBar/FocusAwareStatusBar';
 import { initLanguageDetector } from '@/languages';
 import {
     // useAppDispatch,
@@ -24,12 +25,12 @@ export default function Navigation() {
 
     useEffect(() => {
         i18next.changeLanguage(language).finally(() => {
-            console.log('Language changed');
+            // console.log('Language changed');
         });
     }, [language]);
 
     initLanguageDetector(getLocales()[0].languageTag).finally(() => {
-        console.log('Language detector initialized');
+        // console.log('Language detector initialized');
     });
     // const dispatch = useAppDispatch();
 
@@ -41,6 +42,7 @@ export default function Navigation() {
     return (
         <NavigationContainer linking={LinkingConfiguration} theme={theme === 'dark' ? DarkTheme : DefaultTheme}>
             <StackNavigator />
+            <FocusAwareStatusBar />
         </NavigationContainer>
     );
 }
