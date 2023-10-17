@@ -8,9 +8,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import BottomSheetExample from '@/components/molecules/BottomSheet/screen/BottomSheetExample';
 import Colors from '@/constants/Colors';
 import { BottomTabsParamList } from '@/navigation/types';
 import TabOneScreen from '@/screens/TabOne';
+import TabThreeScreen from '@/screens/TabThree';
 import TabTwoScreen from '@/screens/TabTwo';
 import { useAppSelector } from '@/store/hooks';
 
@@ -33,7 +35,7 @@ function BottomTabNavigator() {
                 headerShown: false,
             }}>
             <BottomTab.Screen
-                name={'TabOne'}
+                name="TabOne"
                 component={TabOneScreen}
                 // options={({ navigation }: BottomTabsScreenProps<'TabOne'>) => ({
                 //     title: 'Tab One',
@@ -63,6 +65,14 @@ function BottomTabNavigator() {
                 options={{
                     title: t('navigation:tabTwo') ?? 'Tab Two',
                     tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+                }}
+            />
+            <BottomTab.Screen
+                name="TabThree"
+                component={TabThreeScreen}
+                options={{
+                    title: 'BottomSheet',
+                    tabBarIcon: ({ color }) => <TabBarIcon name="upload" color={color} />,
                 }}
             />
         </BottomTab.Navigator>
