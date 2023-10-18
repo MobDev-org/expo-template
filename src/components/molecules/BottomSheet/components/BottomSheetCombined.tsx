@@ -28,7 +28,7 @@ const BottomSheetCombined = forwardRef<BottomSheetRef | undefined, BottomSheetPr
 
     if (useScrollView === null)
         return (
-            <View style={{ position: 'absolute', opacity: 0, width }} onLayout={customContentLayout}>
+            <View style={[styles.container, { width }]} onLayout={customContentLayout}>
                 {props.header}
                 {props.children || renderFakeContent()}
                 {props.footer}
@@ -57,6 +57,10 @@ const styles = StyleSheet.create({
     contentContainer: {
         height: 100,
         alignItems: 'center',
+    },
+    container: {
+        position: 'absolute',
+        opacity: 0,
     },
 });
 

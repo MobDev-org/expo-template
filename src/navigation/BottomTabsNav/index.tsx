@@ -8,7 +8,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import BottomSheetExample from '@/components/molecules/BottomSheet/screen/BottomSheetExample';
 import Colors from '@/constants/Colors';
 import { BottomTabsParamList } from '@/navigation/types';
 import TabOneScreen from '@/screens/TabOne';

@@ -37,12 +37,15 @@ const styles = StyleSheet.create({
         height: 300,
         alignItems: 'center',
     },
+    text: {
+        textAlign: 'center',
+    },
 });
 
 const renderFakeContent = () => {
     return (
         <View style={styles.contentContainer}>
-            <Text style={{ textAlign: 'center' }}>
+            <Text style={styles.text}>
                 Add some child components and this bottom sheet will adjust automatically to children height
             </Text>
         </View>

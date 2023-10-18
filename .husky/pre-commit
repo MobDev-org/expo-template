@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# yarn tscheck && yarn lint && yarn testFinal
+yarn tscheck && yarn lint && yarn testFinal
