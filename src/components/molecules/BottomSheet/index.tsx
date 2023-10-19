@@ -1,103 +1,126 @@
-// import {
-//     BottomSheetBackdrop,
-//     BottomSheetBackdropProps,
-//     BottomSheetModal,
-//     BottomSheetModalProps,
-// } from '@gorhom/bottom-sheet';
-// import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
-// import { BackHandler, BackHandlerStatic, Keyboard, NativeEventSubscription, Platform } from 'react-native';
+import {
+    BottomSheetBackdrop,
+    BottomSheetBackdropProps,
+    BottomSheetHandle,
+    BottomSheetModal,
+    BottomSheetModalProps,
+} from '@gorhom/bottom-sheet';
+import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
+import { ColorValue, Keyboard, Platform } from 'react-native';
 
-// const CustomBackdrop = (props: BottomSheetBackdropProps) => {
-//     return <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.3} />;
-// };
+import styles from './styles';
 
-// export type BottomSheetProps = {
-//     children?: React.ReactElement;
-//     header?: React.ReactElement;
-//     snapPoints?: Array<string | number>;
-// } & { onClose?: () => void };
+const CustomBackdrop = (props: BottomSheetBackdropProps) => {
+    return <BottomSheetBackdrop {...props} appearsOnIndex={0} disappearsOnIndex={-1} opacity={0.3} />;
+};
 
-// export type BottomSheetRef = {
-//     closeModal: () => void;
-//     showModal: () => void;
-// };
+export type BottomSheetProps = {
+    children?: React.ReactElement;
+    header?: React.ReactElement;
+    footer?: React.ReactElement;
+    snapPoints?: Array<string | number>;
+    backgroundColor?: ColorValue;
+    disableBackdrop?: boolean;
+    disableHandle?: boolean;
+} & { onClose?: () => void };
 
-// const BottomSheet = forwardRef<
-//     BottomSheetRef | undefined,
-//     (BottomSheetProps | BottomSheetModalProps) & { onClose?: () => void }
-// >((props, ref) => {
-//     // ref
-//     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-//     useImperativeHandle(ref, () => ({
-//         closeModal,
-//         showModal,
-//     }));
+export type BottomSheetRef = {
+    closeModal: () => void;
+    showModal: () => void;
+    dismissModal: () => void;
+};
 
-//     // -----------------------------------------------------------
-//     // variables
-//     const snapPoints = useMemo(() => ['60%'], []);
+const BottomSheet = forwardRef<
+    BottomSheetRef | undefined,
+    (BottomSheetProps | BottomSheetModalProps) & {
+        onClose?: () => void;
+        backgroundColor?: ColorValue;
+        disableBackdrop?: boolean;
+        disableHandle?: boolean;
+    }
+>((props, ref) => {
+    // ref
+    const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+    useImperativeHandle(ref, () => ({
+        closeModal,
+        showModal,
+        dismissModal,
+    }));
 
-//     // callbacks
-//     let backHandler: NativeEventSubscription;
-//     const showModal = useCallback(() => {
-//         backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-//             closeModal();
-//             return true;
-//         });
-//         bottomSheetModalRef.current?.present();
-//     }, []);
+    // -----------------------------------------------------------
+    // variables
+    const snapPoints = useMemo(() => ['60%'], []);
 
-//     const closeModal = useCallback(() => {
-//         bottomSheetModalRef.current?.close();
-//         backHandler.remove();
-//     }, []);
+    // callbacks
+    const showModal = useCallback(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
 
-//     // -----------------------------------------------------------
-//     const [keyboardBottomInset, setKeyboardBottomInset] = React.useState(0);
+        bottomSheetModalRef.current?.present();
+    }, []);
 
-//     useEffect(() => {
-//         let unmounted = false; // FLAG TO CHECK COMPONENT UNMOUNT
-//         // BUG FIXED BOTTOMSHEET FOR ABSOLUTE VIEW WHEN KEYBOARD SHOW
-//         const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
-//             setKeyboardBottomInset(0.1);
-//         });
-//         const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
-//             setKeyboardBottomInset(0);
-//         });
+    const closeModal = useCallback(() => {
+        bottomSheetModalRef.current?.close();
+        // backHandler?.remove();
+        // return true;
+    }, []);
+    const dismissModal = useCallback(() => {
+        bottomSheetModalRef.current?.dismiss();
+        // backHandler?.remove();
+        // return true;
+    }, []);
 
-//         if (!unmounted) {
-//             //
-//         }
+    // useEffect(() => {
+    //     const backHandler = BackHandler.addEventListener('hardwareBackPress', closeModal);
 
-//         // CLEAR FUNCTION COMPONENT UNMOUNT
-//         return () => {
-//             unmounted = true;
-//             showSubscription.remove();
-//             hideSubscription.remove();
-//         };
-//     }, []);
+    //     return () => backHandler.remove();
+    // }, []);
+    // -----------------------------------------------------------
+    const [keyboardBottomInset, setKeyboardBottomInset] = React.useState(0);
 
-//     return (
-//         <BottomSheetModal
-//             {...(Platform.OS === 'android'
-//                 ? {
-//                       keyboardBehavior: 'extend',
-//                       keyboardBlurBehavior: 'restore',
-//                       bottomInset: keyboardBottomInset,
-//                   }
-//                 : {})}
-//             enablePanDownToClose
-//             snapPoints={snapPoints}
-//             backdropComponent={CustomBackdrop}
-//             onChange={(index) => {
-//                 // console.log('index', index);
-//                 if (index === -1) props.onClose && props.onClose();
-//             }}
-//             {...props}
-//             ref={bottomSheetModalRef}>
-//             {props.children}
-//         </BottomSheetModal>
-//     );
-// });
+    useEffect(() => {
+        // BUG FIXED BOTTOMSHEET FOR ABSOLUTE VIEW WHEN KEYBOARD SHOW
+        const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
+            setKeyboardBottomInset(0.1);
+        });
+        const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
+            setKeyboardBottomInset(0);
+        });
 
-// export default BottomSheet;
+        // CLEAR FUNCTION COMPONENT UNMOUNT
+        return () => {
+            showSubscription.remove();
+            hideSubscription.remove();
+        };
+    }, []);
+
+    return (
+        <BottomSheetModal
+            {...(Platform.OS === 'android'
+                ? {
+                      keyboardBehavior: 'extend',
+                      keyboardBlurBehavior: 'restore',
+                      bottomInset: keyboardBottomInset,
+                  }
+                : {})}
+            enablePanDownToClose
+            enableDismissOnClose
+            onDismiss={props.onClose}
+            snapPoints={snapPoints}
+            backdropComponent={props.disableBackdrop ? null : CustomBackdrop}
+            onChange={(index) => {
+                if (index === -1) props.onClose && props.onClose();
+            }}
+            backgroundStyle={{
+                backgroundColor: props?.backgroundColor ?? '#fff',
+            }}
+            style={styles.bottomSheet}
+            {...props}
+            handleComponent={props?.disableHandle ? null : BottomSheetHandle}
+            ref={bottomSheetModalRef}>
+            {props.children}
+        </BottomSheetModal>
+    );
+});
+BottomSheet.displayName = 'BottomSheet';
+
+export default BottomSheet;

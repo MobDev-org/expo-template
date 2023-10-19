@@ -1,66 +1,68 @@
-// import { BottomSheetScrollView } from '@gorhom/bottom-sheet';
-// import React, { forwardRef } from 'react';
-// import { StyleSheet, View } from 'react-native';
+import { BottomSheetScrollView } from '@gorhom/bottom-sheet';
+import React, { forwardRef } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-// import Text from '../../../atoms/Text';
-// import BottomSheet, { BottomSheetProps, BottomSheetRef } from '../index';
+import BottomSheet, { BottomSheetProps, BottomSheetRef } from '../index';
 
-// const BottomSheetScrollable = forwardRef<BottomSheetRef | undefined, BottomSheetProps>((props, ref) => {
-//     return (
-//         <BottomSheet ref={ref} {...props}>
-//             <>
-//                 {props.header}
-//                 <BottomSheetScrollView>{props.children || renderFakeContent()}</BottomSheetScrollView>
-//             </>
-//         </BottomSheet>
-//     );
-// });
+// import Text from '@/components/atoms/Text';
 
-// export default BottomSheetScrollable;
+const BottomSheetScrollable = forwardRef<BottomSheetRef | undefined, BottomSheetProps>((props, ref) => {
+    return (
+        <BottomSheet ref={ref} {...props}>
+            <>
+                {props.header}
+                <BottomSheetScrollView>{props.children || renderFakeContent()}</BottomSheetScrollView>
+                {props.footer}
+            </>
+        </BottomSheet>
+    );
+});
+BottomSheetScrollable.displayName = 'BottomSheetScrollable';
+export default BottomSheetScrollable;
 
-// const styles = StyleSheet.create({
-//     contentContainer: {
-//         height: 100,
-//         alignItems: 'center',
-//     },
-// });
+const styles = StyleSheet.create({
+    contentContainer: {
+        height: 100,
+        alignItems: 'center',
+    },
+});
 
-// const renderFakeContent = () => {
-//     return (
-//         <>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//             <View style={styles.contentContainer}>
-//                 <Text>Scrollable</Text>
-//             </View>
-//         </>
-//     );
-// };
+const renderFakeContent = () => {
+    return (
+        <>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text>Scrollable</Text>
+            </View>
+        </>
+    );
+};

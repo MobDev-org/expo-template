@@ -21,7 +21,7 @@ module.exports = {
     },
     plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier', 'import', 'react-native'],
     rules: {
-        indent: ['error', 4, { SwitchCase: 1 }],
+        // indent: ['error', 4, { SwitchCase: 1 }],
         quotes: ['error', 'single', { avoidEscape: true }],
         'linebreak-style': ['error', 'unix'],
         semi: ['error', 'always'],
